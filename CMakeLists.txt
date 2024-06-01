@@ -11,6 +11,7 @@ set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D__DEBUG__")
 set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE        "-O4 -DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+set(Boost_USE_STATIC_LIBS          ON)
 
 find_package(OpenGL REQUIRED)
 
@@ -33,4 +34,4 @@ include(source/CMakeLists.txt)
 add_executable(rme ${rme_H} ${rme_SRC})
 
 include_directories(${Boost_INCLUDE_DIRS} ${LibArchive_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS})
-target_link_libraries(rme ${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
+target_link_libraries(rme ${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
